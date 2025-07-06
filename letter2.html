@@ -5,30 +5,171 @@
   <title>Letter 2</title>
   <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Caveat&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Polaroid style */
+    .polaroid-container {
+      width: 250px;
+      margin: 20px auto;
+      padding: 10px 10px 25px 10px;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
+      animation: floatUpDown 4s ease-in-out infinite;
+    }
+    .polaroid-container img {
+      width: 100%;
+      border-radius: 4px;
+    }
+    .polaroid-caption {
+      font-family: 'Caveat', cursive;
+      margin-top: 10px;
+      font-size: 1.1em;
+      color: #333;
+    }
+    @keyframes floatUpDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Gallery container */
+    .gallery-frame {
+      max-width: 350px;
+      margin: 40px auto 60px auto;
+      background: #fefefe;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      position: relative;
+      user-select: none;
+    }
+
+    /* Gallery images */
+    .gallery {
+      position: relative;
+      overflow: hidden;
+      height: 230px; /* Adjust to image height */
+      border-radius: 12px;
+    }
+    .gallery img.slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      border-radius: 12px;
+      pointer-events: none;
+      user-select: none;
+    }
+    .gallery img.slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      position: relative;
+    }
+
+    /* Arrow buttons */
+    .gallery-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.8);
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+    .gallery-btn:hover {
+      background-color: white;
+    }
+    .gallery-btn:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px #a0c4ff;
+    }
+    .gallery-btn.prev {
+      left: 10px;
+    }
+    .gallery-btn.next {
+      right: 10px;
+    }
+  </style>
 </head>
 <body>
   <button onclick="goHome()" class="home-btn">💙</button>
 
-  <audio id="bg-music" autoplay loop>
-    <source src="assets/song.mp3" type="audio/mpeg" />
+  <audio id="bg-music" autoplay muted loop>
+    <source src="assets/song2.mp3" type="audio/mpeg" />
   </audio>
 
   <div class="letter">
-    <p>Dear [Name],</p>
-    <p>This is your second letter. I hope yesterday brought you smiles, and today brings you warmth and laughter.</p>
-    <p>[More content here]</p>
+    <p>To my favourite little rat 🐻‍❄️, </p>
+    <p>This letter is dedicated to my one and only — my favourite bird-loving, donkey-riding boy with the cheekiest smile.</p>
+
+    <p>The best thing you’ve ever done for yourself in this friendship is introduce me to baby you. Honestly, whenever I say I have a soft spot for you, icl, it’s because that photo flashes in my head every time I see you. Baby Jonathan really lives rent-free in there.</p>
+
+    <div class="polaroid-container">
+      <img src="images/baby-jonathan.jpg" alt="Baby Jonathan Polaroid" />
+      <div class="polaroid-caption"> My Shayla 🥰</div>
+    </div>
+
+    <p>Okay — the whole letter isn’t just me gushing about baby you (though if it was, half of it would be incoherent screaming). I still want to glaze you a little — but not baby you, just regular you. Because the truth is, it’s been such a privilege having you in my life. Not just since we started properly talking after comp, but even before that. Watching you shift and grow over the past two and a half years has been really special — and being your friend for the past year and a half? Even better.</p>
+
+    <p>One thing about you is that you’ve always been way too hard on yourself. And I genuinely don’t get it, because there has never been a moment I’ve known you where I’ve thought, “eh, this kid is mid.” Never. You’ve always been naturally good at things — although maybe “naturally” isn’t the right word. You are talented, sure, but I also know how hard you work. I’ve seen the effort, the intention, the hours — and that’s what makes everything you do feel so earned.</p>
+
+    <p>Your little ADHD brain has really done something special in making you who you are. You’ve built yourself into someone creative and curious and a little bit feral (in the best way). I mean, who else do I know who makes wooden swords and balances tripods on their chin? But what gets me most is how wholeheartedly you throw yourself into things. Hobbies, routines, routines about your hobbies — I KNOW I make fun of you sometimes, but I do admire it. You’re passionate. You care. That’s rare and really cool.</p>
+
+    <p>Side note and quick reminder: this is the only time I’ll be this nice to you. After this week, it’s back to standing on business. But I am genuinely looking forward to the day I get to watch you compete in an Ironman — to see you hit your goals, find new mountains to climb (and maybe, one day, we’ll climb an actual one together).</p>
+
+    <p>You’ve got so many little quirks that make up who you are — and they’re all very cute, bro. I love that you stop to take pictures of flowers or nice skies. I love walking with you and seeing what catches your eye. You notice the world in a whimsical, quietly fascinated way. It’s very adorable. I still think about what you said about your film photos — how you’ll just finish a roll in a day, capturing anything that feels cute in the moment. It’s such a sweet way to live. Honestly, that’s why I don’t think I’ll want another camera other than Phoebe for a long time — you made film feel like a way of being present. It feels like a very Jonathan thing. Very cutesy. Very sweet. Very endearing.</p>
+
+    <p>There’s a lot to love about you, bro. You can be so stubborn (though I think I’ve slightly broken you — I’m more stubborn. Mwahaha). And you're annoying in a way that’s… honestly kind of delightful. (I know Haya’s going through it rn.) But what I love most is how easily you lean into things. Even before I explained anything, you were a grown man meowing back at a grown woman with zero context — and I loved that.</p>
+
+    <p>I liked that you were kinda subtly into musicals not like actual musicals but songs from movie musicals — I still remember you randomly singing Never Be Enough in the library one day after sitting silently for like an hour, and it was very adorable. You have great music taste in general. I really loved those days when we’d drive home singing nothing but Laufey on repeat. (Put one of my favourite Laufey songs on while reading this — I don’t know if it’s fair to say it reminds me of you, but it feels right. For us.) And even though there’s no more Laufey in the mix lately, I really like the Arabic music you’ve been into too. Every single one of those songs made it into my recs playlist.</p>
+
+    <p>I loved how much you loved your little bird children — Perry, Boff, and Mama Birdy (I named her Jasmine but I don’t know if that ever stuck). Boff was so your son — effortlessly flamboyant but also super emo. Perry was probably the only bird I would’ve let touch me, for like… two seconds. I really do miss those chickens.</p>
+
+    <p>One random side note: you were always a cute kid, bro. From Chess Club Jonathan to BD Jonathan, you’ve always been cute, and you’ve always looked good. I know I say it a lot, so it might sound repetitive, but I mean it. And you KNOW I hate telling men they look good, so me telling you is a privilege. Don’t let it inflate your ego though — or I’ll start humbling you hard. I know you’ve had an influx of comments lately, and I’ve heard some of them too, but idk… to me, you were always that cute kid. Even before anyone else noticed.</p>
+
+    <p>There’s a whole bunch of other things I started rambling about, which I had to cut out because otherwise this letter would be way too long — and my aim is for you to read this in 5 minutes (because that’s when the song loops, and I didn’t code it very well). But maybe that kind of sums up how I feel about our friendship — there’s just a lot in here.</p>
+
+    <p>It still baffles me that I’ve only known you for a year and a half. There’s so much I know about you — not just because you’ve told me, but because I see you. We’ve spent so much time together, especially those hours in the library — just us, morning till afternoon. I’m really glad we had that. I know life is busy now and we don’t get as much time just us two anymore — but I think that’s okay. Busy is good. :)</p>
+
+    <p>In another year and a half, I probably won’t get to see you very much at all, and that’s a weird feeling. Things have gone by so fast. From the moment I met you to now, our relationship has changed and shifted so many times. And honestly? I think what we have is odd in the most beautiful way. It’s not quite like anything I’ve had before, but it’s something I cherish. And I’ll keep cherishing it, for a long time.</p>
+
+    <p>Cheers to a year and a half of friendship.<br/>Happy (early) Birthday :)</p>
   </div>
 
-  <div class="gallery">
-    <img src="images/photo1.jpg" alt="Photo 1" class="slide active" />
-    <img src="images/photo2.jpg" alt="Photo 2" class="slide" />
-    <!-- Add more photos as needed -->
+  <div class="gallery-frame">
+    <button class="gallery-btn prev" aria-label="Back">&#8592;</button>
+    <div class="gallery">
+      <img src="assets/photo1.JPG" alt="Photo 1" class="slide active" />
+      <img src="assets/photo2.JPG" alt="Photo 2" class="slide" />
+      <img src="assets/photo3.JPG" alt="Photo 2" class="slide" />
+      <img src="assets/photo4.JPG" alt="Photo 2" class="slide" />
+      <img src="assets/photo5.JPG" alt="Photo 2" class="slide" />
+      <img src="assets/photo6.JPG" alt="Photo 2" class="slide" />
+      <img src="assets/photo7.JPG" alt="Photo 2" class="slide" />
+      <img src="assets/photo8.JPG" alt="Photo 2" class="slide" />
+      <img src="assets/photo9.JPG" alt="Photo 2" class="slide" />
+      <img src="assets/photo10.JPG" alt="Photo 2" class="slide" />
+      <img src="assets/photo11.jpg" alt="Photo 2" class="slide" />
+      <img src="assets/photo13.jpg" alt="Photo 2" class="slide" />
+      <!-- Add more photos as needed -->
+    </div>
+    <button class="gallery-btn next" aria-label="Next">&#8594;</button>
   </div>
 
   <script src="script.js"></script>
 
   <script>
-    // Ensure background music plays across pages
+    // Background music autoplay and unmute on first click
     window.addEventListener('DOMContentLoaded', () => {
       const audio = document.getElementById('bg-music');
       if (audio) {
@@ -40,7 +181,28 @@
         document.body.addEventListener('click', playMusic, { once: true });
       }
     });
+
+    // Gallery functionality
+    const galleryImages = document.querySelectorAll('.gallery img.slide');
+    const prevBtn = document.querySelector('.gallery-btn.prev');
+    const nextBtn = document.querySelector('.gallery-btn.next');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      galleryImages.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      showSlide(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      showSlide(currentIndex);
+    });
   </script>
-  
 </body>
 </html>
