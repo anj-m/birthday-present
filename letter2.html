@@ -33,72 +33,69 @@
       50% { transform: translateY(-10px); }
     }
 
-    /* Gallery container */
     .gallery-frame {
+      position: relative;
       max-width: 350px;
       margin: 40px auto 60px auto;
       background: #fefefe;
       border-radius: 15px;
       padding: 20px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-      position: relative;
       user-select: none;
+      overflow: hidden;
     }
 
-    /* Gallery images */
     .gallery {
       position: relative;
-      overflow: hidden;
-      height: 230px; /* Adjust to image height */
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 12px;
+      overflow: hidden;
     }
+
     .gallery img.slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; /* ensures full image fits without cropping */
       opacity: 0;
       transition: opacity 0.5s ease;
+      position: absolute;
       border-radius: 12px;
       pointer-events: none;
-      user-select: none;
     }
+
     .gallery img.slide.active {
       opacity: 1;
       pointer-events: auto;
       position: relative;
     }
 
-    /* Arrow buttons */
     .gallery-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background-color: rgba(255,255,255,0.8);
+      background-color: rgba(255, 255, 255, 0.8);
       border: none;
       border-radius: 50%;
       width: 36px;
       height: 36px;
-      font-size: 24px;
+      font-size: 20px;
       cursor: pointer;
-      user-select: none;
+      z-index: 10;
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
       transition: background-color 0.3s ease;
     }
-    .gallery-btn:hover {
-      background-color: white;
-    }
-    .gallery-btn:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px #a0c4ff;
-    }
+
     .gallery-btn.prev {
       left: 10px;
     }
+
     .gallery-btn.next {
       right: 10px;
     }
+
   </style>
 </head>
 <body>
@@ -151,8 +148,8 @@
     <div class="gallery">
       <img src="assets/photo1.jpeg" alt="Photo 1" class="slide active" />
       <img src="assets/photo2.jpeg" alt="Photo 2" class="slide" />
-      <img src="assets/photo3.jpeg" alt="Photo 2" class="slide" />
-      <img src="assets/photo4.jpeg" alt="Photo 2" class="slide" />
+      <img src="assets/photo3.jpeg" alt="Photo 3" class="slide" />
+      <img src="assets/photo4.jpeg" alt="Photo 4" class="slide" />
       <img src="assets/photo5.jpeg" alt="Photo 2" class="slide" />
       <img src="assets/photo6.jpeg" alt="Photo 2" class="slide" />
       <img src="assets/photo7.jpeg" alt="Photo 2" class="slide" />
