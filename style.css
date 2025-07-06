@@ -1,0 +1,207 @@
+/* General body & font */
+body {
+  font-family: 'Caveat', cursive;
+  background: linear-gradient(135deg, #a3c4f3, #3a6ad5);
+  color: white;
+  margin: 0;
+  padding: 0 20px 40px;
+  min-height: 100vh;
+}
+
+/* Landing page styling */
+.landing {
+  text-align: center;
+  
+}
+
+.birthday-title {
+  font-family: 'Fascinate', cursive;
+  font-size: 6vw;
+  margin: 20px 0 10px;
+  color: white;
+  user-select: none;
+}
+
+.intro-container {
+  max-width: 700px;  /* or whatever width matches the birthday title */
+  margin: 0 auto;    /* centers the container */
+  padding: 0 20px;   /* some horizontal padding on small screens */
+  text-align: center;
+}
+
+.intro-message {
+  font-size: 1.3rem;
+  color: white;
+  line-height: 1.5;
+}
+
+
+/* Envelopes container */
+.envelope-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+.envelope-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Envelope styles */
+.envelope {
+  font-size: 5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.envelope.locked:hover {
+  transform: scale(1.1);
+  filter: brightness(0.8);
+}
+
+.envelope.open:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+.countdown-label {
+  font-family: 'Fascinate', cursive;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  user-select: none;
+}
+
+/* Popups */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #3a6ad5;
+  border-radius: 15px;
+  padding: 30px 40px;
+  box-shadow: 0 0 30px #2951a3;
+  max-width: 320px;
+  z-index: 1000;
+  color: white;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-content {
+  position: relative;
+  padding: 20px 30px 30px 30px; /* add right padding so text won't be under the close button */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+  line-height: 1;
+}
+
+.continue-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #2057d3;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+.continue-btn:hover {
+  background: #1a44aa;
+}
+
+/* Letter page styles */
+.letter {
+  max-width: 700px;
+  margin: 60px auto;
+  background: #fff8e1;
+  border-radius: 15px;
+  padding: 30px 40px;
+  color: #3a3a3a;
+  box-shadow: 0 0 15px #3a6ad5;
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+/* Choice buttons on letter1 */
+.choice-btn {
+  margin: 10px 15px 0 0;
+  padding: 10px 20px;
+  background: #3a6ad5;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+.choice-btn:hover {
+  background: #2b4bb0;
+}
+
+/* Home button */
+.home-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  z-index: 10000;
+  user-select: none;
+}
+
+/* Gallery */
+.gallery {
+  max-width: 700px;
+  margin: 40px auto 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gallery img {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+.gallery img.active,
+.gallery img:hover {
+  opacity: 1;
+  box-shadow: 0 0 8px #3a6ad5;
+}

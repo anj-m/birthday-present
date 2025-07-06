@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Caveat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body class="landing">
+  <button onclick="goHome()" class="home-btn">💙</button>
+
+  <audio id="bg-music" autoplay muted loop>
+    <source src="assets/song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <h1 class="birthday-title">Happy Birthday Jonathan!</h1>
+  <div class="intro-container">
+    <p class="intro-message">When my parents got asked gay son or thot daughter, they got confused and chose thought daughter so now you have to deal with my thoughts - here's a little something special I made for you. [ P.S yes I know this is janky but THIS IS JUST CUTER THAN A NORMAL LETTER!] </p>
+  </div>
+
+  <div class="envelope-container">
+    <div class="envelope-block">
+      <div id="env0" class="envelope open" onclick="openEnvelopePopup()">💌</div>
+      <div class="countdown-label" id="countdown0"></div>
+    </div>
+
+    <div class="envelope-block">
+      <div id="env1" class="envelope locked" onclick="lockedEnvelopeClick(1)">✉️</div>
+      <div class="countdown-label" id="countdown1"></div>
+    </div>
+
+    <div class="envelope-block">
+      <div id="env2" class="envelope locked" onclick="lockedEnvelopeClick(2)">✉️</div>
+      <div class="countdown-label" id="countdown2"></div>
+    </div>
+  </div>
+
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <button class="close-btn" onclick="closeEnvelopePopup()">×</button>
+      <p>Welcome to your first day of letters 💙</p>
+      <button class="continue-btn" onclick="goToLetter1()">Click here when ready :3 </button>
+    </div>
+  </div>
+
+  <div id="locked-popup" class="popup hidden">
+    <div class="popup-content">
+      <button class="close-btn" onclick="closeLockedPopup()">×</button>
+      <p>Thou shall not pass! Come back when the countdown is finished 💙</p>
+    </div>
+  </div>
+</body>
+</html>
