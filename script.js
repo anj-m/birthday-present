@@ -79,10 +79,10 @@ function goHome() {
   window.location.href = 'index.html';
 }
 
-// Attempt to play muted music on page load (except letter1-part2.html)
+// Attempt to play muted music on page load
 window.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('bg-music');
-  if (!window.location.href.includes('letter1-part2.html') && audio) {
+  if (audio) {
     audio.play().catch(() => {
       // Autoplay might be blocked until user interaction
     });
