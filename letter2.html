@@ -9,7 +9,7 @@
 <body>
   <button onclick="goHome()" class="home-btn">💙</button>
 
-  <audio id="bg-music" autoplay muted loop>
+  <audio id="bg-music" autoplay loop>
     <source src="assets/song.mp3" type="audio/mpeg" />
   </audio>
 
@@ -26,5 +26,21 @@
   </div>
 
   <script src="script.js"></script>
+
+  <script>
+    // Ensure background music plays across pages
+    window.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('bg-music');
+      if (audio) {
+        audio.muted = true;
+        const playMusic = () => {
+          audio.muted = false;
+          audio.play().catch(() => {});
+        };
+        document.body.addEventListener('click', playMusic, { once: true });
+      }
+    });
+  </script>
+  
 </body>
 </html>
