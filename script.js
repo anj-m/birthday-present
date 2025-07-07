@@ -19,7 +19,7 @@ function lockedEnvelopeClick(index) {
   const unlockDates = [
     new Date(Date.UTC(2025, 6, 5, 14, 0, 0)), // July 5 midnight Sydney AEST = UTC+10, so UTC time is previous day 14:00
     new Date(Date.UTC(2025, 6, 6, 14, 0, 0)), // July 7 midnight Sydney
-    new Date(Date.UTC(2025, 6, 6, 14, 0, 0))  // July 8 midnight Sydney
+    new Date(Date.UTC(2025, 7, 6, 14, 0, 0))  // July 8 midnight Sydney
   ];
   const now = new Date();
 
@@ -68,7 +68,7 @@ function countdownTimer(id, unlockTime, envId) {
 const unlockDatesUTC = [
   new Date(Date.UTC(2025, 6, 5, 14, 0, 0)),
   new Date(Date.UTC(2025, 6, 6, 14, 0, 0)),
-  new Date(Date.UTC(2025, 6, 6, 14, 0, 0))
+  new Date(Date.UTC(2025, 7, 6, 14, 0, 0))
 ];
 
 countdownTimer("countdown0", unlockDatesUTC[0], "env0");
