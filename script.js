@@ -68,7 +68,7 @@ function countdownTimer(id, unlockTime, envId) {
 const unlockDatesUTC = [
   new Date(Date.UTC(2025, 6, 5, 14, 0, 0)),
   new Date(Date.UTC(2025, 6, 6, 14, 0, 0)),
-  new Date(Date.UTC(2025, 6, 7, 14, 0, 0))
+  new Date(Date.UTC(2025, 6, 6, 14, 0, 0))
 ];
 
 countdownTimer("countdown0", unlockDatesUTC[0], "env0");
