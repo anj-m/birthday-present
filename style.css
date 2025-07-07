@@ -173,7 +173,7 @@ body {
   left: 15px;
   background: transparent;
   border: none;
-  font-size: 28px;
+  font-size: 50px;
   cursor: pointer;
   color: white;
   z-index: 10000;
@@ -329,4 +329,22 @@ body {
 .scalloped {
   border: 100px solid transparent;
   border-image: url('assets/scallop-border.png') 300 round;
+}
+
+
+.audio-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 50px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10001;
+  transition: transform 0.2s;
+}
+
+.audio-btn:hover {
+  transform: scale(1.5);
 }
