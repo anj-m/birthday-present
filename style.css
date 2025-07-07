@@ -180,4 +180,153 @@ body {
   user-select: none;
 }
 
-/* Gallery */
+
+.letter3-page {
+  overflow-x: hidden;
+}
+
+.envelope-animation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.open-envelope {
+  width: 180px;
+  animation: openFlap 1s ease forwards;
+}
+
+.envelope-animation.opened .open-envelope {
+  animation: openFlap 1s ease forwards;
+}
+
+.sparkles-container {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.sparkle {
+  width: 20px;
+  height: 20px;
+  animation: floatUp 1.5s ease infinite;
+}
+
+.sparkle.heart {
+  background: url('assets/heart.png') no-repeat center/contain;
+}
+
+.sparkle.star {
+  background: url('assets/star.png') no-repeat center/contain;
+}
+
+@keyframes openFlap {
+  0% { transform: rotateX(0); opacity: 1; }
+  100% { transform: rotateX(90deg); opacity: 0; }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-60px); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Stickers */
+.sticker {
+  width: 80px;
+  position: absolute;
+  z-index: 5;
+}
+
+.sticker.top-left {
+  top: 30px;
+  left: 30px;
+}
+
+.sticker.bottom-right {
+  bottom: 30px;
+  right: 30px;
+}
+
+.sticker.top-right {
+  top: 80px;
+  right: 30px;
+}
+
+.sticker.bottom-left {
+  bottom: 80px;
+  left: 30px;
+}
+
+/* Gallery formatting */
+.gallery-frame {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.gallery {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+  border-radius: 12px;
+}
+
+.gallery img.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  object-fit: contain;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.gallery img.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
+
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.8);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+}
+
+.gallery-btn.prev { left: 10px; }
+.gallery-btn.next { right: 10px; }
+
+/* Scalloped border (you must add a real PNG for this) */
+.scalloped {
+  border: 6px solid transparent;
+  border-image: url('assets/scallop-border.png') 30 round;
+}

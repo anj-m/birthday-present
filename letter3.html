@@ -2,43 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Letter 3</title>
+  <title>Birthday Letter</title>
   <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Caveat&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <button onclick="goHome()" class="home-btn">💙</button>
+<body class="letter3-page">
 
   <audio id="bg-music" autoplay muted loop>
-    <source src="assets/song.mp3" type="audio/mpeg" />
+    <source src="assets/song2.mp3" type="audio/mpeg" />
   </audio>
 
-  <div class="letter">
-    <p>Dear [Name],</p>
-    <p>This is your final letter. I hope today is filled with the love of everyone around you and the quiet joy of being deeply appreciated.</p>
-    <p>[Final thoughts and wishes]</p>
+  <!-- Envelope animation -->
+  <div class="envelope-animation">
+    <img src="assets/envelope.png" alt="Envelope" class="open-envelope" />
+    <div class="sparkles-container">
+      <div class="sparkle heart"></div>
+      <div class="sparkle star"></div>
+      <div class="sparkle heart"></div>
+    </div>
   </div>
 
-  <div class="gallery">
-    <img src="images/photo1.jpg" alt="Photo 1" class="slide active" />
-    <img src="images/photo2.jpg" alt="Photo 2" class="slide" />
-    <!-- Add more photos as needed -->
+  <!-- Actual letter content -->
+  <div class="letter hidden">
+    <button onclick="goHome()" class="home-btn">💙</button>
+
+    <!-- Stickers -->
+    <img src="assets/sticker1.png" class="sticker top-left" />
+    <img src="assets/sticker2.png" class="sticker bottom-right" />
+    <img src="assets/sticker3.png" class="sticker top-right" />
+    <img src="assets/sticker4.png" class="sticker bottom-left" />
+
+    <p>Dear Jojo,</p>
+    <p>This is your final letter. I hope today is filled with the love of everyone around you and the quiet joy of being deeply appreciated.</p>
+    <p>[Final thoughts and wishes]</p>
+
+    <!-- Photo gallery -->
+    <div class="gallery-frame scalloped">
+      <button class="gallery-btn prev" aria-label="Previous">&#8592;</button>
+      <div class="gallery">
+        <img src="assets/photo1.jpeg" alt="Photo 1" class="slide active" />
+        <img src="assets/photo2.jpeg" alt="Photo 2" class="slide" />
+        <!-- Add more photos as needed -->
+      </div>
+      <button class="gallery-btn next" aria-label="Next">&#8594;</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
-
   <script>
-    // Ensure background music plays across pages
+    // Play animation before showing letter
     window.addEventListener('DOMContentLoaded', () => {
       const audio = document.getElementById('bg-music');
+      const envelope = document.querySelector('.envelope-animation');
+      const letter = document.querySelector('.letter');
+
+      setTimeout(() => {
+        envelope.classList.add('opened');
+        setTimeout(() => {
+          envelope.style.display = 'none';
+          letter.classList.remove('hidden');
+        }, 2000);
+      }, 1000);
+
       if (audio) {
         audio.muted = true;
-        const playMusic = () => {
+        document.body.addEventListener('click', () => {
           audio.muted = false;
           audio.play().catch(() => {});
-        };
-        document.body.addEventListener('click', playMusic, { once: true });
+        }, { once: true });
       }
+    });
+
+    // Simple gallery navigation
+    const slides = document.querySelectorAll('.gallery .slide');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    document.querySelector('.gallery-btn.prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    document.querySelector('.gallery-btn.next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
     });
   </script>
 </body>
